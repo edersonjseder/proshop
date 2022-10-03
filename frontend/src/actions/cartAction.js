@@ -1,5 +1,6 @@
 import axios from "axios";
-import { CART_ADD_ITEM, PRODUCT_NODE_BACKEND_URL } from "../types/cartTypes";
+import { CART_ADD_ITEM } from "../types/cartTypes";
+import { PRODUCT_NODE_BACKEND_URL } from "../url/appUrl";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`${PRODUCT_NODE_BACKEND_URL}/${id}`);

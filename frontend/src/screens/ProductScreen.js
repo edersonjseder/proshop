@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import {
+  useNavigate,
+  Link,
+  useParams,
+  createSearchParams,
+} from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { listProductDetails } from "../actions/productActions";
@@ -9,10 +14,10 @@ import Message from "../components/Message";
 import QtyDropdown from "../components/QtyDropdown";
 
 const ProductScreen = () => {
-  const [qty, setQty] = useState(0);
-
+  const [qty, setQty] = useState(1);
   const { id } = useParams();
   const navigate = useNavigate();
+  const params = { qty: qty };
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -22,10 +27,12 @@ const ProductScreen = () => {
   }, [id, dispatch]);
 
   const addToCartHandler = () => {
-    navigate(`/cart/${id}?qty=${qty}`);
+    navigate({
+      pathname: `/cart/${id}`,
+      search: `?${createSearchParams(params)}`,
+    });
   };
 
-  console.log("The Product: ", product);
   return (
     <>
       <Link className="btn btn-light my-3" to="/">

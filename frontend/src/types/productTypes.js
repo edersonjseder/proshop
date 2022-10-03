@@ -1,6 +1,3 @@
-export const PRODUCT_JAVA_BACKEND_URL = "http://localhost:9091/api/products";
-export const PRODUCT_NODE_BACKEND_URL = "/api/products";
-
 export const PRODUCT_LIST_REQUEST = "PRODUCT_LIST_REQUEST";
 export const PRODUCT_LIST_SUCCESS = "PRODUCT_LIST_SUCCESS";
 export const PRODUCT_LIST_FAIL = "PRODUCT_LIST_FAIL";

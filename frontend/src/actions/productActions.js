@@ -6,8 +6,8 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
-  PRODUCT_NODE_BACKEND_URL,
 } from "../types/productTypes";
+import { PRODUCT_NODE_BACKEND_URL } from "../url/appUrl";
 
 export const listProducts = () => async (dispatch) => {
   try {
