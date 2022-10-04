@@ -11,7 +11,7 @@ import {
   Card,
   ListGroupItem,
 } from "react-bootstrap";
-import { addToCart } from "../actions/cartAction";
+import { addToCart, removeFromCart } from "../actions/cartAction";
 import Message from "../components/Message";
 import QtyDropdown from "../components/QtyDropdown";
 
@@ -33,8 +33,8 @@ const CartScreen = () => {
     }
   }, [dispatch, id, qty]);
 
-  const removeFromCartHandler = (id) => {
-    console.log("remove");
+  const removeFromCartHandler = (pId) => {
+    dispatch(removeFromCart(pId));
   };
 
   const checkoutHandler = () => {
