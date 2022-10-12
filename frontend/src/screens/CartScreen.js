@@ -11,7 +11,7 @@ import {
   Card,
   ListGroupItem,
 } from "react-bootstrap";
-import { addToCart, removeFromCart } from "../actions/cartAction";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import Message from "../components/Message";
 import QtyDropdown from "../components/QtyDropdown";
 
